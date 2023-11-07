@@ -44,7 +44,7 @@ def model_provider(pre_process=True, post_process=True) -> Union[GPTModel, megat
         Union[GPTModel, megatron.model.GPTModel]: The returned model
     """
     args = get_args()
-
+    print(args.model_spec)
     print_rank_0('building GPT model ...')
     config = core_transformer_config_from_args(get_args())
 
