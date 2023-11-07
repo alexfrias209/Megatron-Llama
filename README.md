@@ -52,8 +52,9 @@ Change codeparrot_data.json to your actual dataset if you are using a different 
 
 ## Running Experiment
 Change global batch size so that the models are trained with a global batch-size of 4M tokens. Will depends on # of GPUS
-
+ ```
 /workspace/megatron/examples/llama7B.sh
 /workspace/megatron/examples/llama13B.sh
 /workspace/megatron/examples/llama70B.sh
+ ```
 
