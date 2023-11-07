@@ -1,6 +1,13 @@
 # PlantPathogen analysis 
 Project for CSE 120
 
+## Dummy Data
+
+For downloading dummy data (codeparrat_json) for testing go to llamaData folder in Megatron-Llama/llamaData run:
+```
+python example_data.py
+```
+
 ## Setup
 
 Run an instance of the PyTorch container and mount Megatron:
