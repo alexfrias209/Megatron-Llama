@@ -51,6 +51,9 @@ Change codeparrot_data.json to your actual dataset if you are using a different 
 
 
 ## Running Experiment
+
+NOTE: 
+
 Change global batch size so that the models are trained with a global batch-size of 4M tokens. Will depends on # of GPUS
  ```
 /workspace/megatron/examples/llama7B.sh
@@ -59,7 +62,7 @@ Change global batch size so that the models are trained with a global batch-size
  ```
 
 
-NOTE: If cuda out of memory and want to test on singleGPU do
+NOTE: If cuda out of memory and want to test on singleGPU run
  ```
 /workspace/megatron/examples/llamaTEST.sh
  ```
