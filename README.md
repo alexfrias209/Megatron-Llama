@@ -4,14 +4,15 @@ Project for CSE 120
 ## Setup
 
 Run an instance of the PyTorch container and mount Megatron:
+
     ```
     docker pull nvcr.io/nvidia/pytorch:23.10-py3
     ```
+    
      ```
-   docker run --gpus all -it --rm \
-   -v /home/broski209/documents/Megatron-Llama:/workspace/megatron \
-   nvcr.io/nvidia/pytorch:23.10-py3
-
+    docker run --gpus all -it --rm \
+    -v /home/broski209/documents/Megatron-Llama:/workspace/megatron \
+    nvcr.io/nvidia/pytorch:23.10-py3
     ```
 
     * The following set of commands requires you to have git installed. Depending on what OS and what kind of shell you are using, the ```venv\Scripts/activate``` comamnd will be different. For specific information about which variation of the command you should use, see the venv documentation: https://docs.python.org/3/library/venv.html. In the "How venvs work section", there is a table containing the possible commands. The sample command below is for Windows users while using the Command Prompt (cmd.exe)
