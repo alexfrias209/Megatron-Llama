@@ -31,12 +31,7 @@ After mounting be sure to have nltk and sentencepiece as that will be needed for
 pip install sentencepiece
 pip install nltk
  ```
-
-To preprocess data do:
-
-
-## Running Experiment
-
+*To preprocess data do:
  ```
 python tools/preprocess_data.py \
 --input /workspace/megatron/llamaData/codeparrot_data.json \
@@ -47,41 +42,18 @@ python tools/preprocess_data.py \
 --json-keys content
  ```
 NOTE: 
+
 Change codeparrot_data.json to your actual dataset if you are using a different one
+
 --workers is changeable
+
 --json-keys is changeable with default of text
 
-1. Train:
-    ```
-    # Currently defaulted to a effb2
-    python train.py
-    ```
 
-    ```
-    # Can also specify changes in command line (See args.py)
-    python train.py --num_epochs 5
-    ```
-If receiving error on train.py related to libcuda, inside train.py change:
-device = "cuda" if torch.cuda.is_available() else "cpu" -> device = "cpu"
+## Running Experiment
+Change global batch size so that the models are trained with a global batch-size of 4M tokens. Will depends on # of GPUS
 
-2. View Graph on tensorboard:
-    ```
-    tensorboard --logdir <logs_directory>
+/workspace/megatron/examples/llama7B.sh
+/workspace/megatron/examples/llama13B.sh
+/workspace/megatron/examples/llama70B.sh
 
-    #Example
-    tensorboard --logdir ./models/
-    
-    ```
-    Note: Tensorboard looks better outside conda environment(If using)
-
-3. Test:
-    ```
-    # To test need to specify model_name, extra(subfolder name), and load_checkpoint - Example:
-    python test.py --model_name EffNetB2 --extra Test --load_checkpoint 4
-    ```
-
-## How we will use Git
-** This is subject to change. **
-
-
-In an effort to make using Git seemless, everyone needs to follow the following guidelines: Each member has their own branch. All of your main work should be done in your branch. Once you are ready to get your changes merged, open a pull request to the "staging" branch. Once you have done this, the rest of the team will review the code and ensure that there will be no merge conflicts before the changes are pushed to the master branch. We also want to make sure all linting, type-checking, and unit tests pass before the changes are merged. Once the team is happy with what is in the staging branch, a pull request should be opened to merged the changes into the master branch. Someone will then accept the pull request, merging the changes.
