@@ -33,7 +33,7 @@ pip install nltk
  ```
 *To preprocess data do:
  ```
-python tools/preprocess_data.py \
+python /workspace/megatron/tools/preprocess_data.py \
 --input /workspace/megatron/llamaData/codeparrot_data.json \
 --output-prefix my-llama \
 --tokenizer-type Llama2Tokenizer \
