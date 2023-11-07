@@ -4,7 +4,7 @@ export CUDA_DEVICE_MAX_CONNECTIONS=1
 
 TOKENIZER_MODEL=/workspace/megatron/llamaData/tokenizerFiles/tokenizer.model
 CHECKPOINT_PATH=/workspace/megatron/checkpoints/llama7b
-DATA_PATH=/workspace/megatron/llamaData/my-llama_content_document
+DATA_PATH=/workspace/megatron/llamaData/my-llama_content_document    #If using different json key then name will change
 
 #Change Global Batch-Size so that it's trained with a global batch-size of 4M tokens
 GPT_ARGS="
