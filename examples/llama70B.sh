@@ -16,7 +16,7 @@ GPT_ARGS="
     --seq-length 4096  \
     --max-position-embeddings 4096 \
     --micro-batch-size 4 \
-    --global-batch-size 8 \    
+    --global-batch-size 8 \
     --lr 1.5e-4 \
     --train-iters 500000 \
     --lr-decay-iters 320000 \
