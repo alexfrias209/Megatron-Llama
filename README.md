@@ -24,17 +24,32 @@ nvcr.io/nvidia/pytorch:23.10-py3
  ```
 
     
-## Extra - Miniconda installation
-For wsl/Ubuntu Miniconda installation steps. Download page https://docs.conda.io/projects/miniconda/en/latest/
+## Preprocess Data
+After mounting be sure to have nltk and sentencepiece as that will be needed for running experiment.
+
  ```
-    wget "Download link"
-    chmod +x "filename".sh
-    ./"filename".sh      (can press q to skip liscence agreement)
-    restart shell
+pip install sentencepiece
+pip install nltk
  ```
+
+To preprocess data do:
+
 
 ## Running Experiment
 
+ ```
+python tools/preprocess_data.py \
+--input /workspace/megatron/llamaData/codeparrot_data.json \
+--output-prefix my-llama \
+--tokenizer-type Llama2Tokenizer \
+--tokenizer-model /workspace/megatron/llamaData/tokenizerFiles/tokenizer.model \
+--workers 4 \
+--json-keys content
+ ```
+NOTE: 
+Change codeparrot_data.json to your actual dataset if you are using a different one
+--workers is changeable
+--json-keys is changeable with default of text
 
 1. Train:
     ```
