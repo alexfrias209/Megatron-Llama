@@ -58,3 +58,8 @@ Change global batch size so that the models are trained with a global batch-size
 /workspace/megatron/examples/llama70B.sh
  ```
 
+
+NOTE: If cuda out of memory and want to test on singleGPU do
+ ```
+/workspace/megatron/examples/llamaTEST.sh
+ ```
